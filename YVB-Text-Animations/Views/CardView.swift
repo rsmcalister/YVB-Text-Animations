@@ -20,17 +20,17 @@ struct CardView: View {
                     Text(verse.text)
                         .font(.title2)
                         .fontWeight(.bold)
-                        .offset(x: animate ? 0 : 40 )
+                        .offsetLeading(with: animate)
                     
                     Text("\(verse.address), ESV")
                         .font(.callout)
                         .fontWeight(.thin)
                         .padding([.top], 2)
-                        .offset(y: animate ? 0 : 40)
+                        .offsetUp(with: animate)
                 }
                 .foregroundColor(.white)
                 .padding()
-                .opacity(animate ? 1 : 0)
+                .fadeIn(with: animate)
                 .onAppear() {
                     withAnimation(.linear(duration: 0.6)) {
                         self.animate.toggle()

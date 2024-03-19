@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D260D4602BA9EF18004FCB06 /* OffsetLeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D260D45F2BA9EF18004FCB06 /* OffsetLeading.swift */; };
+		D260D4642BA9F0A7004FCB06 /* FadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D260D4622BA9F0A7004FCB06 /* FadeIn.swift */; };
+		D260D4652BA9F0A7004FCB06 /* OffsetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D260D4632BA9F0A7004FCB06 /* OffsetUp.swift */; };
 		D2E10E672BA8BC9F009BAC0C /* YVB_Text_AnimationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E10E662BA8BC9F009BAC0C /* YVB_Text_AnimationsApp.swift */; };
 		D2E10E6B2BA8BCA0009BAC0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E10E6A2BA8BCA0009BAC0C /* Assets.xcassets */; };
 		D2E10E6F2BA8BCA0009BAC0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E10E6E2BA8BCA0009BAC0C /* Preview Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D260D45F2BA9EF18004FCB06 /* OffsetLeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetLeading.swift; sourceTree = "<group>"; };
+		D260D4622BA9F0A7004FCB06 /* FadeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeIn.swift; sourceTree = "<group>"; };
+		D260D4632BA9F0A7004FCB06 /* OffsetUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetUp.swift; sourceTree = "<group>"; };
 		D2E10E632BA8BC9F009BAC0C /* YVB-Text-Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YVB-Text-Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E10E662BA8BC9F009BAC0C /* YVB_Text_AnimationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVB_Text_AnimationsApp.swift; sourceTree = "<group>"; };
 		D2E10E6A2BA8BCA0009BAC0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +45,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D260D45E2BA9EECD004FCB06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2E10E7A2BA8CA2A009BAC0C /* CardView.swift */,
+				D2E10E7C2BA8CE4B009BAC0C /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D260D4612BA9F05A004FCB06 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D260D4622BA9F0A7004FCB06 /* FadeIn.swift */,
+				D260D4632BA9F0A7004FCB06 /* OffsetUp.swift */,
+				D260D45F2BA9EF18004FCB06 /* OffsetLeading.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		D2E10E5A2BA8BC9F009BAC0C = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +88,8 @@
 				D2E10E6C2BA8BCA0009BAC0C /* YVB_Text_Animations.entitlements */,
 				D2E10E6D2BA8BCA0009BAC0C /* Preview Content */,
 				D2E10E792BA8C905009BAC0C /* Model */,
-				D2E10E7A2BA8CA2A009BAC0C /* CardView.swift */,
-				D2E10E7C2BA8CE4B009BAC0C /* ContentView.swift */,
+				D260D45E2BA9EECD004FCB06 /* Views */,
+				D260D4612BA9F05A004FCB06 /* ViewModifiers */,
 			);
 			path = "YVB-Text-Animations";
 			sourceTree = "<group>";
@@ -156,9 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D260D4642BA9F0A7004FCB06 /* FadeIn.swift in Sources */,
 				D2E10E762BA8BCD7009BAC0C /* Data.swift in Sources */,
+				D260D4602BA9EF18004FCB06 /* OffsetLeading.swift in Sources */,
 				D2E10E7D2BA8CE4B009BAC0C /* ContentView.swift in Sources */,
 				D2E10E672BA8BC9F009BAC0C /* YVB_Text_AnimationsApp.swift in Sources */,
+				D260D4652BA9F0A7004FCB06 /* OffsetUp.swift in Sources */,
 				D2E10E782BA8C8ED009BAC0C /* Verse.swift in Sources */,
 				D2E10E7B2BA8CA2A009BAC0C /* CardView.swift in Sources */,
 			);

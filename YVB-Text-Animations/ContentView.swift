@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
+
     private  let verses = Data().verses
     
     var body: some View {

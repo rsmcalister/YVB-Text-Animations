@@ -10,15 +10,22 @@ import SwiftUI
 struct VerseView1: View {
     let verse: Verse
     @State var animateAddress = false
-    @State var animate = false
+    @State var typeWriteActive = false
     @State private var text = ""
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(text)
-                .font(.title2)
-                .fontWeight(.bold)
-                .transition(.opacity)
+            ZStack(alignment: .topLeading) {
+                Text(verse.text)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.clear)
+                
+                Text(text)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .transition(.opacity)
+            }
             
             Text("\(verse.address), ESV")
                 .font(.callout)
@@ -30,18 +37,45 @@ struct VerseView1: View {
         .onAppear() {
             withAnimation(.linear(duration: 0.4)) {
                 self.animateAddress.toggle()
-            }
-            withAnimation(.linear(duration: 0.4)) {
-                verse.text.enumerated().forEach { index, ch in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.1) {
-                        text += String(ch)
-                    }
-                }
+                self.typeWriteActive.toggle()
+                typeWrite(by: .word)
             }
         }
         .onDisappear() {
             self.animateAddress = false
-            self.animate = false
+            self.typeWriteActive = false
+            self.text = ""
+        }
+    }
+    
+    enum TypeWriteToken {
+        case character
+        case word
+        case line
+    }
+
+    private func typeWrite(by: TypeWriteToken = .character) {
+        guard typeWriteActive else { return }
+
+        switch by {
+        case .character:
+            for char in verse.text {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
+                    self.text.append(char)
+                }
+            }
+        case .word:
+            for word in verse.text.split(separator: " ") {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                    text.append(contentsOf: word + " ")
+                }
+            }
+        case .line:
+            for line in verse.text.split(separator: "\n") {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) {
+                    text.append(contentsOf: line + "\n")
+                }
+            }
         }
     }
 }
